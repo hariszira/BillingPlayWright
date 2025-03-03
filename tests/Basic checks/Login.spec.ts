@@ -5,4 +5,3 @@ test.describe("Login Page", () => {
     await loginPage.login();
   });
 });
-                                                    

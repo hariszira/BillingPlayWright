@@ -27,7 +27,7 @@ test.describe("Login to Billing Module and Verify Presence od Submodules", () =>
       const locator = page.locator(`h2.label:has-text("${section}")`);
       await expect(locator).toBeVisible();
     }
-    
+
   });
 });
 
