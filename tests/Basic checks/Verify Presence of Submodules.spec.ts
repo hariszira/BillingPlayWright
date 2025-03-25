@@ -10,7 +10,7 @@ test.describe("Login to Billing Module and Verify Presence of Submodules", () =>
   
     const BillingHeader = page.locator('div.name:has-text("BILLING")');
     await expect(BillingHeader).toBeVisible({ timeout: 5000 });  // Assert that the Billing module is visible
-  
+       
     // Check the presence of submodules on Home Page
     const sections = ["Charge Management","Billing Profile","Approval","IBS Processing","Invoicing","Finance","Administration","Penalty"];
     
