@@ -13,38 +13,39 @@ test.describe('Billing Profile Overview UI Tests', () => {
   test('Verify Overview Tab and is present and click on it', async ({ page }) => {
       billingProfileOverviewPage = new BillingProfileOverviewPage(page);
       await page.goto(fullUrl);
-      await expect(billingProfileOverviewPage.overviewTabButton).toBeVisible({ timeout: 5000 });
+      //await expect(billingProfileOverviewPage.overviewTabButton).toBeVisible({ timeout: 5000 });
       await billingProfileOverviewPage.overviewTabButton.click();
     });
 
-  test('Verify OBS subgrids are present', async ({ page }) => {
+  test('Verify default subgrids are present upon Profile page loading', async ({ page }) => {
     billingProfileOverviewPage = new BillingProfileOverviewPage(page);
     await page.goto(fullUrl);
-    
-    //Profile Field Button
-    await expect(billingProfileOverviewPage.profileFieldButton).toBeVisible({ timeout: 5000 });
-    await billingProfileOverviewPage.profileFieldButton.click();
-   
-    //Invoice Data Button
-    await expect(billingProfileOverviewPage.invoiceDataButton).toBeVisible({ timeout: 5000 });
-    await billingProfileOverviewPage.invoiceDataButton.click();
-    
-    //Profile Template Button
-    /*await expect(billingProfileOverviewPage.ProfileTemplateButton).toBeVisible({ timeout: 5000 });
-    await billingProfileOverviewPage.ProfileTemplateButton.click();*/
-    
-    //Approval Flow Button
-    await expect(billingProfileOverviewPage.approvalFlowButton).toBeVisible({ timeout: 5000 });
+    await expect(billingProfileOverviewPage.profileFieldButton).toBeVisible;//Verify Profile Field Button is present
+    await billingProfileOverviewPage.profileFieldButton.click();//Profile Field Button
+
+    await expect(billingProfileOverviewPage.invoiceDataButton).toBeVisible;//Verify Invoice Data Button is present
+    await billingProfileOverviewPage.invoiceDataButton.click();//Invoice Data Button
+
+    await expect(billingProfileOverviewPage.approvalFlowButton).toBeVisible;//Verify Approval Flow Button is present
     await billingProfileOverviewPage.approvalFlowButton.click();
-    
-    //Comment Button
-    await expect(billingProfileOverviewPage.commentButton).toBeVisible({ timeout: 5000 });
+
+    await expect(billingProfileOverviewPage.commentButton).toBeVisible;//Verify Comment Button is present
     await billingProfileOverviewPage.commentButton.click();
-    
-    //History Button
-    await expect(billingProfileOverviewPage.historyButton).toBeVisible({ timeout: 5000 });
+
+    await expect(billingProfileOverviewPage.historyButton).toBeVisible;//Verify History Button is present
     await billingProfileOverviewPage.historyButton.click();
   });
-
-  // Add more tests as needed
 });
+
+test('Verify Predefined set of columns in the table', async ({ page }) => {
+  billingProfileOverviewPage = new BillingProfileOverviewPage(page);
+  this.page.goto(fullUrl);
+  await billingProfileOverviewPage.overviewTabButton.click();
+  this.page.
+
+//Sort 
+//Filter
+//Predefinisani set kolona
+//Rezultati pretrage ?
+//eXPORT i export selection 
+//

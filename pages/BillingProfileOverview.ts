@@ -27,11 +27,32 @@ export class BillingProfileOverviewPage {
     this.approvalFlowButton = page.locator('li[data-id="approvalFlow"]');
     this.commentButton = page.locator('li[data-id="comments"]');
     this.historyButton = page.locator('li[data-id="history"]');
+    this.profileNameColumn = page.locator('th[data-id="profileName"]');
+    this.profileTypeColumn = page.locator('th[data-id="profileTypeCode"]';
+    this.profileCodeColumn = page.locator('th[data-id="id"]');
+    this.accountNameColumn = page.locator('th[data-id="accountName"]');
+    this.statementDirectionColumn = page.locator('th[data-id="statementDirectionCode"]');
+    this.billFrequencyColumn = page.locator('th[data-id="billFrequencyCode"]');
+    this.invoiceTypeColumn = page.locator('th[data-id="invoiceTypeCode"]');
+    this.systemCurrencyColumn = page.locator('th[data-id="systemReconCurrencyCode"]');
+    this.billDueDaysColumn = page.locator('th[data-id="billDueDateCode"]');
+    this.statusColumn = page.locator('th[data-id="status"]');
+    this.validFromColumn = page.locator('th[data-id="validFrom"]');
+    this.validToColumn = page.locator('th[data-id="validTo"]');
+    this.marketSegmentColumn = page.locator('th[data-id="marketSegmentCode"]');
+    this.cashFlowColumn = page.locator('th[data-id="revenueTypeCode"]');
+    this.financialMethodColumn = page.locator('th[data-id="col-id="financialMethodCode""]');
+    this.formatDefinitionColumn = page.locator('th[data-id="col-id="formatDefCode"]');
+    this.descriptionColumn = page.locator('th[data-id="description"]');
+    this.createdColumn = page.locator('th[data-id="created"]');
+    this.createdByColumn = page.locator('th[data-id="createdBy"]');
+    this.modifiedColumn = page.locator('th[data-id="modified"]');
+    this.modifiedByColumn = page.locator('th[data-id="modifiedBy"]');
 
-    this.filterInput = page.locator('input[name="filter"]');
+    /*this.filterInput = page.locator('input[name="filter"]');
     this.sortDropdown = page.locator('select[name="sort"]');
     this.dataTable = page.locator('table#overview-data');
-    this.paginationControls = page.locator('.pagination-controls');
+    this.paginationControls = page.locator('.pagination-controls');*/
   }
 
   // Metoda za filtriranje podataka
