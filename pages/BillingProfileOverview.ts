@@ -15,6 +15,27 @@ export class BillingProfileOverviewPage {
   public sortDropdown: Locator;
   public dataTable: Locator;
   public paginationControls: Locator;
+  public profileNameColumn : Locator;
+  public profileTypeColumn : Locator;
+  public profileCodeColumn : Locator;
+  public accountNameColumn : Locator;
+  public statementDirectionColumn : Locator;
+  public billFrequencyColumn : Locator;
+  public invoiceTypeColumn : Locator;
+  public systemCurrencyColumn : Locator;
+  public billDueDaysColumn : Locator;
+  public statusColumn : Locator;
+  public validFromColumn : Locator;
+  public validToColumn : Locator;
+  public marketSegmentColumn : Locator;
+  public cashFlowColumn : Locator;
+  public financialMethodColumn : Locator;
+  public formatDefinitionColumn : Locator;
+  public descriptionColumn : Locator;
+  public createdColumn : Locator;
+  public createdByColumn : Locator;
+  public modifiedColumn : Locator;
+  public modifiedByColumn : Locator;
   
   constructor(page: Page) {
     this.page = page
@@ -28,7 +49,7 @@ export class BillingProfileOverviewPage {
     this.commentButton = page.locator('li[data-id="comments"]');
     this.historyButton = page.locator('li[data-id="history"]');
     this.profileNameColumn = page.locator('th[data-id="profileName"]');
-    this.profileTypeColumn = page.locator('th[data-id="profileTypeCode"]';
+    this.profileTypeColumn = page.locator('th[data-id="profileTypeCode"]');
     this.profileCodeColumn = page.locator('th[data-id="id"]');
     this.accountNameColumn = page.locator('th[data-id="accountName"]');
     this.statementDirectionColumn = page.locator('th[data-id="statementDirectionCode"]');
@@ -48,12 +69,12 @@ export class BillingProfileOverviewPage {
     this.createdByColumn = page.locator('th[data-id="createdBy"]');
     this.modifiedColumn = page.locator('th[data-id="modified"]');
     this.modifiedByColumn = page.locator('th[data-id="modifiedBy"]');
+  };
 
-    /*this.filterInput = page.locator('input[name="filter"]');
-    this.sortDropdown = page.locator('select[name="sort"]');
-    this.dataTable = page.locator('table#overview-data');
-    this.paginationControls = page.locator('.pagination-controls');*/
-  }
+    //this.filterInput = page.locator('input[name="filter"]');
+    //this.sortDropdown = page.locator('select[name="sort"]');
+    //this.dataTable = page.locator('table#overview-data');
+    //this.paginationControls = page.locator('.pagination-controls');
 
   // Metoda za filtriranje podataka
   async filterData(filterText: string): Promise<void> {

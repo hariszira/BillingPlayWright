@@ -37,15 +37,14 @@ test.describe('Billing Profile Overview UI Tests', () => {
   });
 });
 
-test('Verify Predefined set of columns in the table', async ({ page }) => {
+/*test('Verify Predefined set of columns in the table', async ({ page }) => {
   billingProfileOverviewPage = new BillingProfileOverviewPage(page);
   this.page.goto(fullUrl);
   await billingProfileOverviewPage.overviewTabButton.click();
-  this.page.
+  this.page.*/
 
 //Sort 
 //Filter
 //Predefinisani set kolona
 //Rezultati pretrage ?
-//eXPORT i export selection 
-//
+//eXPORT i export selection
