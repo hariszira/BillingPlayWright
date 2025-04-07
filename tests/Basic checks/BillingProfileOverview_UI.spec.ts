@@ -8,18 +8,15 @@ test.describe('Billing Profile Overview UI Tests', () => {
 
   test.beforeEach(async ({ loginPage, page }) => {
     await loginPage.login();
+    billingProfileOverviewPage = new BillingProfileOverviewPage(page);
+    await page.goto(fullUrl);
   });
 
   test('Verify Overview Tab and is present and click on it', async ({ page }) => {
-      billingProfileOverviewPage = new BillingProfileOverviewPage(page);
-      await page.goto(fullUrl);
-      //await expect(billingProfileOverviewPage.overviewTabButton).toBeVisible({ timeout: 5000 });
       await billingProfileOverviewPage.overviewTabButton.click();
     });
 
   test('Verify default subgrids are present upon Profile page loading', async ({ page }) => {
-    billingProfileOverviewPage = new BillingProfileOverviewPage(page);
-    await page.goto(fullUrl);
     await expect(billingProfileOverviewPage.profileFieldButton).toBeVisible;//Verify Profile Field Button is present
     await billingProfileOverviewPage.profileFieldButton.click();//Profile Field Button
 
@@ -35,16 +32,37 @@ test.describe('Billing Profile Overview UI Tests', () => {
     await expect(billingProfileOverviewPage.historyButton).toBeVisible;//Verify History Button is present
     await billingProfileOverviewPage.historyButton.click();
   });
+
+test('Verify Predefined set of columns in the table', async ({ page }) => {
+  const columnLocators = [
+    billingProfileOverviewPage.profileNameColumn,
+    billingProfileOverviewPage.profileTypeColumn,
+    billingProfileOverviewPage.profileCodeColumn,
+    billingProfileOverviewPage.accountNameColumn,
+    billingProfileOverviewPage.statementDirectionColumn,
+    billingProfileOverviewPage.billFrequencyColumn,
+    billingProfileOverviewPage.invoiceTypeColumn,
+    billingProfileOverviewPage.systemCurrencyColumn,
+    billingProfileOverviewPage.billDueDaysColumn,
+    billingProfileOverviewPage.statusColumn,
+    billingProfileOverviewPage.validFromColumn,
+    billingProfileOverviewPage.validToColumn,
+    billingProfileOverviewPage.marketSegmentColumn,
+    billingProfileOverviewPage.cashFlowColumn,
+    billingProfileOverviewPage.financialMethodColumn,
+    billingProfileOverviewPage.formatDefinitionColumn,
+    billingProfileOverviewPage.descriptionColumn,
+    billingProfileOverviewPage.createdColumn,
+    billingProfileOverviewPage.createdByColumn,
+    billingProfileOverviewPage.modifiedColumn,
+    billingProfileOverviewPage.modifiedByColumn
+  ];
+  for (const [index, locator] of columnLocators.entries()) {
+    await expect(locator, `Column at index ${index} should be visible`).toBeVisible();
+  }
 });
 
-/*test('Verify Predefined set of columns in the table', async ({ page }) => {
-  billingProfileOverviewPage = new BillingProfileOverviewPage(page);
-  this.page.goto(fullUrl);
-  await billingProfileOverviewPage.overviewTabButton.click();
-  this.page.*/
+}
+);
 
-//Sort 
-//Filter
-//Predefinisani set kolona
-//Rezultati pretrage ?
-//eXPORT i export selection
+//Sort //Filter//Predefinisani set kolona//Rezultati pretrage ?//eXPORT i export selection

@@ -48,27 +48,27 @@ export class BillingProfileOverviewPage {
     this.approvalFlowButton = page.locator('li[data-id="approvalFlow"]');
     this.commentButton = page.locator('li[data-id="comments"]');
     this.historyButton = page.locator('li[data-id="history"]');
-    this.profileNameColumn = page.locator('th[data-id="profileName"]');
-    this.profileTypeColumn = page.locator('th[data-id="profileTypeCode"]');
-    this.profileCodeColumn = page.locator('th[data-id="id"]');
-    this.accountNameColumn = page.locator('th[data-id="accountName"]');
-    this.statementDirectionColumn = page.locator('th[data-id="statementDirectionCode"]');
-    this.billFrequencyColumn = page.locator('th[data-id="billFrequencyCode"]');
-    this.invoiceTypeColumn = page.locator('th[data-id="invoiceTypeCode"]');
-    this.systemCurrencyColumn = page.locator('th[data-id="systemReconCurrencyCode"]');
-    this.billDueDaysColumn = page.locator('th[data-id="billDueDateCode"]');
-    this.statusColumn = page.locator('th[data-id="status"]');
-    this.validFromColumn = page.locator('th[data-id="validFrom"]');
-    this.validToColumn = page.locator('th[data-id="validTo"]');
-    this.marketSegmentColumn = page.locator('th[data-id="marketSegmentCode"]');
-    this.cashFlowColumn = page.locator('th[data-id="revenueTypeCode"]');
-    this.financialMethodColumn = page.locator('th[data-id="col-id="financialMethodCode""]');
-    this.formatDefinitionColumn = page.locator('th[data-id="col-id="formatDefCode"]');
-    this.descriptionColumn = page.locator('th[data-id="description"]');
-    this.createdColumn = page.locator('th[data-id="created"]');
-    this.createdByColumn = page.locator('th[data-id="createdBy"]');
-    this.modifiedColumn = page.locator('th[data-id="modified"]');
-    this.modifiedByColumn = page.locator('th[data-id="modifiedBy"]');
+    this.profileNameColumn = page.locator('span').filter({ hasText: 'Profile Name' });
+    this.profileTypeColumn = page.locator('span').filter({ hasText: 'Profile Type' });
+    this.profileCodeColumn = page.locator('#overview').getByRole('treegrid').locator('span').filter({ hasText: 'Profile Code' });
+    this.accountNameColumn = page.locator('span').filter({ hasText: 'Account Name' });
+    this.statementDirectionColumn = page.locator('span').filter({ hasText: 'Statement Direction' });
+    this.billFrequencyColumn = page.locator('span').filter({ hasText: 'Bill Frequency' });
+    this.invoiceTypeColumn = page.locator('span').filter({ hasText: 'Invoice Type' });
+    this.systemCurrencyColumn = page.locator('span').filter({ hasText: 'System Currency' });
+    this.billDueDaysColumn = page.locator('span').filter({ hasText: /^Bill Due Days$/ })
+    this.statusColumn = page.locator('span').filter({ hasText: 'Status' });
+    this.validFromColumn = page.locator('#overview span').filter({ hasText: 'Valid From' })
+    this.validToColumn = page.locator('#overview span').filter({ hasText: 'Valid To' })
+    this.marketSegmentColumn = page.locator('span').filter({ hasText: 'Market Segment' });
+    this.cashFlowColumn = page.locator('span').filter({ hasText: 'Cash Flow' });
+    this.financialMethodColumn = page.locator('span').filter({ hasText: 'Financial Method' });
+    this.formatDefinitionColumn = page.locator('span').filter({ hasText: 'Format Definition' });
+    this.descriptionColumn = page.locator('span').filter({ hasText: 'Description' });
+    this.createdColumn = page.locator('#overview span').filter({ hasText: /^Created$/ })
+    this.createdByColumn = page.locator('#overview span').filter({ hasText: 'Created By' })
+    this.modifiedColumn = page.locator('#overview span').filter({ hasText: /^Modified$/ })
+    this.modifiedByColumn = page.locator('#overview span').filter({ hasText: 'Modified By' })  
   };
 
     //this.filterInput = page.locator('input[name="filter"]');
