@@ -34,35 +34,23 @@ test.describe('Billing Profile Overview UI Tests', () => {
   });
 
 test('Verify Predefined set of columns in the table', async ({ page }) => {
-  const columnLocators = [
-    billingProfileOverviewPage.profileNameColumn,
-    billingProfileOverviewPage.profileTypeColumn,
-    billingProfileOverviewPage.profileCodeColumn,
-    billingProfileOverviewPage.accountNameColumn,
-    billingProfileOverviewPage.statementDirectionColumn,
-    billingProfileOverviewPage.billFrequencyColumn,
-    billingProfileOverviewPage.invoiceTypeColumn,
-    billingProfileOverviewPage.systemCurrencyColumn,
-    billingProfileOverviewPage.billDueDaysColumn,
-    billingProfileOverviewPage.statusColumn,
-    billingProfileOverviewPage.validFromColumn,
-    billingProfileOverviewPage.validToColumn,
-    billingProfileOverviewPage.marketSegmentColumn,
-    billingProfileOverviewPage.cashFlowColumn,
-    billingProfileOverviewPage.financialMethodColumn,
-    billingProfileOverviewPage.formatDefinitionColumn,
-    billingProfileOverviewPage.descriptionColumn,
-    billingProfileOverviewPage.createdColumn,
-    billingProfileOverviewPage.createdByColumn,
-    billingProfileOverviewPage.modifiedColumn,
-    billingProfileOverviewPage.modifiedByColumn
-  ];
-  for (const [index, locator] of columnLocators.entries()) {
+  for (const [index, locator] of billingProfileOverviewPage.columnLocators.entries()) {
     await expect(locator, `Column at index ${index} should be visible`).toBeVisible();
   }
 });
 
+test('Verify Sorting in Billing Profile Overview grid', async ({ page }) => {
+  for (const [index, locator] of billingProfileOverviewPage.columnLocators.entries()) {
+  await locator.click();
 }
-);
+});
 
-//Sort //Filter//Predefinisani set kolona//Rezultati pretrage ?//eXPORT i export selection
+test('Verify Filtering in Billing Profile Overview grid', async ({ page }) => {
+  for (const [index, locator] of billingProfileOverviewPage.columnLocators.entries()) {
+  await locator.click();
+}
+});
+
+});
+
+//Sort //Filter//Rezultati pretrage ?//eXPORT i export selection

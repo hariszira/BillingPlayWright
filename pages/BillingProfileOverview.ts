@@ -71,28 +71,29 @@ export class BillingProfileOverviewPage {
     this.modifiedByColumn = page.locator('#overview span').filter({ hasText: 'Modified By' })  
   };
 
-    //this.filterInput = page.locator('input[name="filter"]');
-    //this.sortDropdown = page.locator('select[name="sort"]');
-    //this.dataTable = page.locator('table#overview-data');
-    //this.paginationControls = page.locator('.pagination-controls');
-
-  // Metoda za filtriranje podataka
-  async filterData(filterText: string): Promise<void> {
-    await this.filterInput.fill(filterText);
+  get columnLocators(): Locator[] {
+    return [
+      this.profileNameColumn,
+      this.profileTypeColumn,
+      this.profileCodeColumn,
+      this.accountNameColumn,
+      this.statementDirectionColumn,
+      this.billFrequencyColumn,
+      this.invoiceTypeColumn,
+      this.systemCurrencyColumn,
+      this.billDueDaysColumn,
+      this.statusColumn,
+      this.validFromColumn,
+      this.validToColumn,
+      this.marketSegmentColumn,
+      this.cashFlowColumn,
+      this.financialMethodColumn,
+      this.formatDefinitionColumn,
+      this.descriptionColumn,
+      this.createdColumn,
+      this.createdByColumn,
+      this.modifiedColumn,
+      this.modifiedByColumn     
+    ];
   }
-
-  // Metoda za sortiranje podataka
-  async sortData(criteria: string): Promise<void> {
-    await this.sortDropdown.selectOption({ label: criteria });
-  }
-
-  // Metoda za proveru da li je tabela prikazana
-  async isDataTableVisible(): Promise<boolean> {
-    return await this.dataTable.isVisible();
-  }
-
-  // Metoda za proveru da li su kontrole za paginaciju prisutne
-  async isPaginationVisible(): Promise<boolean> {
-    return await this.paginationControls.isVisible();
-  }
-}
+};
