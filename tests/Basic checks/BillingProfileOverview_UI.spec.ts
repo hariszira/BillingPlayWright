@@ -52,5 +52,3 @@ test('Verify Filtering in Billing Profile Overview grid', async ({ page }) => {
 });
 
 });
-
-//Sort //Filter//Rezultati pretrage ?//eXPORT i export selection

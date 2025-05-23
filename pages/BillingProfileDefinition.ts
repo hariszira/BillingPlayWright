@@ -20,7 +20,7 @@ export class BillingProfileDefinitionPage {
     this.submitButton = page.locator('button[type="submit"]');
     this.cancelButton = page.locator('button[type="button"]');
   }
-
+/*
   // Metoda za kreiranje novog unosa
   async createNewEntry(name: string, description: string): Promise<void> {
     await this.createButton.click();
@@ -45,5 +45,5 @@ export class BillingProfileDefinitionPage {
   // Metoda za odustajanje od promene
   async cancelChanges(): Promise<void> {
     await this.cancelButton.click();
-  }
+  }*/
 }
